@@ -1,0 +1,14 @@
+<%- include("template/cabecera", {tituloWeb: 'Nuevo Entrenador' }) %>
+    <div class="container">
+        <h1>Crear nuevo Entrenador</h1>
+        <form action="/entrenador" class="my-2" method="POST">
+            <input type="text" placeholder="Nombre Entrenador" class="form-control my-2" name="Nombre">
+            <input type="text" placeholder="Bio Entrenador" class="form-control my-2" name="Bio">
+            <input type="text" placeholder="Ciudad Entrenador" class="form-control my-2" name="Ciudad">
+            <input type="text" placeholder="Lista_Pokemon Entrenador" class="form-control my-2" name="Lista_Pokemon">
+            <button type="submit" class="btn btn-dark btn-block">
+                Agregar
+            </button>
+        </form>
+    </div>
+<%- include("template/footer") %>

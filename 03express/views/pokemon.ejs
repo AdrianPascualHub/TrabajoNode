@@ -1,12 +1,12 @@
 <%- include("template/cabecera", {tituloWeb: 'Panel de Administración' }) %>
 
     <div class="container">
-        <h1>CRUD Mongo</h1>
+        <h1 class="pokedex">POKEDEX</h1>
         <a class="btn btn-success btn-block my-4" href="/pokemon/crear">Crear un nuevo pokemon</a>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">Descripción</th>
@@ -38,6 +38,7 @@
                             <% } %>
             </tbody>
         </table>
+        <a href="/" class="">Volver</a>
     </div>
 
     <%- include("template/footer") %>

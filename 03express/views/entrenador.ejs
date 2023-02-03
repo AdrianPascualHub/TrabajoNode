@@ -1,0 +1,48 @@
+<%- include("template/cabecera", {tituloWeb: 'Panel de Administración' }) %>
+
+    <div class="container">
+        <h1>ENTRENADORES</h1>
+        <a class="btn btn-success btn-block my-4" href="/entrenador/crearentrenador">Crear un nuevo entrenador</a>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Bio</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Lista Pokemon</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayEntrenador.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayEntrenador.forEach(entrenador=> { %>
+                        <tr>
+                            <th scope="row">
+                                <%= entrenador.id %>
+                            </th>
+                            <td>
+                                <%= entrenador.Nombre %>
+                            </td>
+                            <td>
+                                <%= entrenador.Bio %>
+                            </td>
+                            <td>
+                                <%= entrenador.Ciudad %>
+                            </td>
+                            <td>
+                                <%= entrenador.Lista_Pokemon %>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
+                                </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+        <a href="/" class="">Volver</a>
+    </div>
+
+    <%- include("template/footer") %>
