@@ -30,7 +30,9 @@
                             <td>
                                 <%= pokemon.descripcion %>
                             </td>
-                            <td>Aciones</td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="pokemon/<%= pokemon.id %>">Editar/Eliminar</a>
+                                </td>
                         </tr>
                         <% }) %>
                             <% } %>
