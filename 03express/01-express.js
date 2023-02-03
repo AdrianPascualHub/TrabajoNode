@@ -1,19 +1,23 @@
 const express = require('express') //Requerimos Express
+const bodyParser  = require('body-parser');
 const app = express() //Variable para utilizar lo que estamos requiriendo
-const port = 3005 //Habitualmente el 3000 para entornos locales
+require('dotenv').config()
+//Cuando lo subamos a un servidor real, deberemos cambiarlo
+const port = process.env.PORT || 3005;
 //USUARIO Y CONTRASEÑA CLUST
 //cursonode
 //7OnRZP2Mf3uYvYRW
-
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
 //Conexión a base de datos
 const mongoose = require('mongoose');
 //Variables que tendremos siempre:
 //Lo correcto será declararlas EN VARIABLES DE ENTORNO
 //para que nadie vea directamente nuestras credenciales
-const user = 'cursonode';
-const password = '7OnRZP2Mf3uYvYRW';
-const dbname = 'dbpokemon';
-const uri = `mongodb+srv://${user}:${password}@cluster0.vfr0ygf.mongodb.net/${dbname}?retryWrites=true&w=majority`; //URL de conexión
+//const user = 'cursonode';
+//const password = '7OnRZP2Mf3uYvYRW';
+//const dbname = 'dbpokemon';
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.semeioe.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`; //URL de conexión
 mongoose.connect(uri,
   { useNewUrlParser: true, useUnifiedTopology: true }
 )
