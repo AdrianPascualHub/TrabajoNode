@@ -8,3 +8,10 @@ Trabajo utilizando node y mongodb, creamos una aplicacion donde podemos ver los 
 -He modificado el css de todas las paginas.
 -En la pagina entrenadores y pokemon he creado un boton para volver a inicio donde puedes volver a la pagina de inicio.
 -He creado un nuevo crud llamado entrenadores, que tienen un nombre, una breve biografia, ciudad y lista de pokemon. 
+
+.env
+PORT=4000
+
+DB_USER=cursonode
+DB_PASSWORD=7OnRZP2Mf3uYvYRW
+DB_NAME=dbpokemon

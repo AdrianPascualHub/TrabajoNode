@@ -1,5 +1,5 @@
 <%- include("template/cabecera", {tituloWeb: 'Panel de Administración' }) %>
-
+    
     <div class="container">
         <h1>ENTRENADORES</h1>
         <a class="btn btn-success btn-block my-4" href="/entrenador/crearentrenador">Crear un nuevo entrenador</a>
@@ -35,14 +35,16 @@
                                 <%= entrenador.Lista_Pokemon %>
                             </td>
                             <td>
-                                <a class="btn btn-warning btn-sm" href="entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
-                                </td>
+                                <a class="btn btn-warning btn-sm"
+                                    href="entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
+                            </td>
                         </tr>
                         <% }) %>
                             <% } %>
             </tbody>
         </table>
         <a href="/" class="">Volver</a>
+        <img class="ash" src="/img/ash.png" alt="" srcset="">
     </div>
 
     <%- include("template/footer") %>
